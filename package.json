@@ -1,0 +1,36 @@
+{
+  "name": "gulp-textr",
+  "description": "Transform text with Textr",
+  "version": "0.0.0",
+  "keywords": [
+    "gulpplugin",
+    "typographic",
+    "textr",
+    "transformer",
+    "text"
+  ],
+  "repository": "andrepolischuk/gulp-textr",
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "textr": "^0.3.0",
+    "through2": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.2.0",
+    "babel": "^5.5.6",
+    "gulp": "^3.9.0",
+    "rimraf": "^2.4.3",
+    "typographic-ellipses": "^1.0.11",
+    "typographic-quotes": "^1.2.1",
+    "typographic-single-spaces": "^1.0.2"
+  },
+  "main": "index.es5.js",
+  "scripts": {
+    "test": "babel-node test.js",
+    "transpile": "babel --stage 0 index.js --out-file index.es5.js",
+    "prepublish": "npm run transpile",
+    "postpublish": "rimraf index.es5.js"
+  },
+  "author": "Andrey Polischuk <andre.polischuk@gmail.com> (https://twitter.com/andrepolischuk)",
+  "license": "MIT"
+}
