@@ -17,7 +17,7 @@ var quotes = require('typographic-quotes');
 var spaces = require('typographic-single-spaces');
 var textr = require('gulp-textr');
 
-const transform = textr({locale: 'en-us'})
+var transform = textr({locale: 'en-us'})
   .use(spaces)
   .use(quotes)
   .use(ellipses)
