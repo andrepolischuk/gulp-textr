@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-npm install --save gulp-textr
+npm install --save-dev gulp-textr
 ```
 
 ## Usage
