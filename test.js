@@ -4,13 +4,16 @@ import ellipses from 'typographic-ellipses';
 import quotes from 'typographic-quotes';
 import spaces from 'typographic-single-spaces';
 import textr from './index.es5';
+let fixture;
 
-const fixture = new File({
-  path: 'fixture.txt',
-  contents: new Buffer(`Hello  "world"...\n`)
+test.beforeEach(t => {
+  fixture = new File({
+    path: 'fixture.txt',
+    contents: new Buffer(`Hello  "world"...\n`)
+  });
 });
 
-test.cb('should return original text', t => {
+test.cb.serial('return original text', t => {
   const stream = textr();
 
   stream.on('data', file => {
@@ -22,12 +25,15 @@ test.cb('should return original text', t => {
   stream.write(fixture);
 });
 
-test.cb('should return transformed text', t => {
-  const stream = textr({locale: 'en-us'})
-    .use(spaces)
-    .use(quotes)
-    .use(ellipses)
-    .use(String.prototype.trim);
+test.cb.serial('return transformed text', t => {
+  const stream = textr([
+    spaces,
+    quotes,
+    ellipses,
+    String.prototype.trim
+  ], {
+    locale: 'en-us'
+  });
 
   stream.on('data', file => {
     t.is(file.relative, 'fixture.txt');
