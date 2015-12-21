@@ -11,34 +11,30 @@ npm install --save gulp-textr
 ## Usage
 
 ```js
-var gulp = require('gulp');
-var ellipses = require('typographic-ellipses');
-var quotes = require('typographic-quotes');
-var spaces = require('typographic-single-spaces');
-var textr = require('gulp-textr');
+import gulp from 'gulp';
+import ellipses from 'typographic-ellipses';
+import quotes from 'typographic-quotes';
+import spaces from 'typographic-single-spaces';
+import textr from 'gulp-textr';
 
-var transform = textr({locale: 'en-us'})
-  .use(spaces)
-  .use(quotes)
-  .use(ellipses)
-  .use(String.prototype.trim);
-
-gulp.task('default', function () {
+gulp.task('default', () => {
   return gulp.src('src/text.md') // Hello  "world"...
-    .pipe(transform)
+    .pipe(textr([
+      spaces,
+      quotes,
+      ellipses
+    ], {
+      locale: 'en-us'
+    }))
     .pipe(gulp.dest('dist')); // Hello “world”…
 });
 ```
 
 ## API
 
-### textr([defaults])
+### textr(fns[, defaults])
 
-Create new transform stream with default options (see `textr` [defaults][textr-defaults]).
-
-### .use(...fn)
-
-Register transform function.
+Create new transform stream with transform function array and default options (see `textr` [defaults][textr-defaults]).
 
 ## License
 
