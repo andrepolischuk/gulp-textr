@@ -2,9 +2,9 @@ import {PluginError} from 'gulp-util';
 import {obj} from 'through2';
 import textr from 'textr';
 
-export default (fns, defaults) => {
+export default function gulpTextr(plugins, defaults) {
   const tf = textr(defaults);
-  if (Array.isArray(fns)) tf.use(...fns);
+  if (Array.isArray(plugins)) tf.use(...plugins);
 
   return obj(function (file, encoding, fn) {
     if (file.isNull()) return fn(null, file);

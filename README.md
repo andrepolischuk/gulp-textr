@@ -32,9 +32,21 @@ gulp.task('default', () => {
 
 ## API
 
-### textr(fns[, defaults])
+### textr(plugins[, defaults])
 
-Create new transform stream with transform function array and default options (see `textr` [defaults][textr-defaults]).
+Create new transform stream.
+
+#### plugins
+
+Type: `array`
+
+Array of [plugins][textr-plugins] and transform functions.
+
+#### defaults
+
+Type: `object`
+
+Default options (see `textr` [defaults][textr-defaults]).
 
 ## License
 
@@ -45,3 +57,4 @@ MIT
 
 [textr]: https://github.com/shuvalov-anton/textr
 [textr-defaults]: https://github.com/shuvalov-anton/textr#textrdefaults
+[textr-plugins]: https://www.npmjs.com/browse/keyword/textr

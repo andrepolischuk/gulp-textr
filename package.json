@@ -33,6 +33,6 @@
     "prepublish": "babel index.js --out-file index.es5.js",
     "postpublish": "rimraf index.es5.js && git push --follow-tags"
   },
-  "author": "Andrey Polischuk <andre.polischuk@gmail.com> (https://twitter.com/andrepolischuk)",
+  "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
   "license": "MIT"
 }
