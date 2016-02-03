@@ -55,6 +55,6 @@ MIT
 [travis-url]: https://travis-ci.org/andrepolischuk/gulp-textr
 [travis-image]: https://travis-ci.org/andrepolischuk/gulp-textr.svg?branch=master
 
-[textr]: https://github.com/shuvalov-anton/textr
-[textr-defaults]: https://github.com/shuvalov-anton/textr#textrdefaults
+[textr]: https://github.com/A/textr
+[textr-defaults]: https://github.com/A/textr#textrdefaults
 [textr-plugins]: https://www.npmjs.com/browse/keyword/textr
