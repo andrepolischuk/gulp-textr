@@ -12,20 +12,17 @@ npm install --save-dev gulp-textr
 
 ```js
 import gulp from 'gulp';
-import ellipses from 'typographic-ellipses';
-import quotes from 'typographic-quotes';
-import spaces from 'typographic-single-spaces';
 import textr from 'gulp-textr';
+import quotes from 'typographic-quotes';
+import ellipses from 'typographic-ellipses';
+import spaces from 'typographic-single-spaces';
 
 gulp.task('default', () => {
   return gulp.src('src/text.md') // Hello  "world"...
-    .pipe(textr([
-      spaces,
-      quotes,
-      ellipses
-    ], {
-      locale: 'en-us'
-    }))
+    .pipe(textr(
+      [ spaces, quotes, ellipses ],
+      { locale: 'en-us' }
+    ))
     .pipe(gulp.dest('dist')); // Hello “world”…
 });
 ```
