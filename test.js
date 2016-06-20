@@ -3,7 +3,7 @@ import {File} from 'gulp-util';
 import ellipses from 'typographic-ellipses';
 import quotes from 'typographic-quotes';
 import spaces from 'typographic-single-spaces';
-import textr from './index.es5';
+import textr from './index';
 let fixture;
 
 test.beforeEach(t => {
